@@ -174,7 +174,7 @@ namespace log4net.Util
 		{
 			get 
 			{
-#if NETCF || NETSTANDARD1_3
+#if NETCF || NETSTANDARD2_0
 				return SystemInfo.EntryAssemblyLocation+".config";
 #else
 				return System.AppDomain.CurrentDomain.SetupInformation.ConfigurationFile;
@@ -495,7 +495,7 @@ namespace log4net.Util
 			{
 				try
 				{
-#if NET_4_0 || MONO_4_0
+#if NET_4_0 || MONO_4_0 || NETSTANDARD2_0
 					if (myAssembly.IsDynamic)
 					{
 						return "Dynamic Assembly";
@@ -999,7 +999,7 @@ namespace log4net.Util
 		{
 			try
 			{
-#if NETCF || NETSTANDARD1_3
+#if NETCF || NETSTANDARD2_0
 				// Configuration APIs are not suported under the Compact Framework
 #elif NET_2_0
 				return ConfigurationManager.AppSettings[key];

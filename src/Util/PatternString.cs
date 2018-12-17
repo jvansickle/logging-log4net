@@ -300,7 +300,7 @@ namespace log4net.Util
 			s_globalRulesRegistry.Add("date", typeof(DatePatternConverter));
 #if !NETCF
 			s_globalRulesRegistry.Add("env", typeof(EnvironmentPatternConverter));
-#if !NETSTANDARD1_3 // EnvironmentFolderPathPatternConverter not yet supported
+#if !NETSTANDARD2_0 // EnvironmentFolderPathPatternConverter not yet supported
 			s_globalRulesRegistry.Add("envFolderPath", typeof(EnvironmentFolderPathPatternConverter));
 #endif
 #endif
@@ -315,7 +315,7 @@ namespace log4net.Util
 			s_globalRulesRegistry.Add("utcdate", typeof(UtcDatePatternConverter));
 			s_globalRulesRegistry.Add("utcDate", typeof(UtcDatePatternConverter));
 			s_globalRulesRegistry.Add("UtcDate", typeof(UtcDatePatternConverter));
-#if !NETCF && !NETSTANDARD1_3
+#if !NETCF && !NETSTANDARD2_0
 			// TODO - have added common variants of casing like utcdate above.
 			// Wouldn't it be better to use a case-insensitive Hashtable?
 			s_globalRulesRegistry.Add("appsetting", typeof(AppSettingPatternConverter));
@@ -352,25 +352,27 @@ namespace log4net.Util
 		public PatternString(string pattern)
 		{
 			m_pattern = pattern;
-			ActivateOptions();
-		}
+#pragma warning disable RECS0021 // Warns about calls to virtual member functions occuring in the constructor
+            ActivateOptions();
+#pragma warning restore RECS0021 // Warns about calls to virtual member functions occuring in the constructor
+        }
 
-		#endregion
-  
-		/// <summary>
-		/// Gets or sets the pattern formatting string
-		/// </summary>
-		/// <value>
-		/// The pattern formatting string
-		/// </value>
-		/// <remarks>
-		/// <para>
-		/// The <b>ConversionPattern</b> option. This is the string which
-		/// controls formatting and consists of a mix of literal content and
-		/// conversion specifiers.
-		/// </para>
-		/// </remarks>
-		public string ConversionPattern
+        #endregion
+
+        /// <summary>
+        /// Gets or sets the pattern formatting string
+        /// </summary>
+        /// <value>
+        /// The pattern formatting string
+        /// </value>
+        /// <remarks>
+        /// <para>
+        /// The <b>ConversionPattern</b> option. This is the string which
+        /// controls formatting and consists of a mix of literal content and
+        /// conversion specifiers.
+        /// </para>
+        /// </remarks>
+        public string ConversionPattern
 		{
 			get { return m_pattern;	}
 			set { m_pattern = value; }
