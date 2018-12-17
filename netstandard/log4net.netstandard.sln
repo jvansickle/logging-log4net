@@ -4,13 +4,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26114.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4BB38D1C-1862-432B-881C-925714F7F997}"
-	ProjectSection(SolutionItems) = preProject
-		nuget.config = nuget.config
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "log4net", "log4net", "{3E8F1857-9AE1-4F0F-B1CE-026696F9C20A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backup", "log4net\backup\backup.csproj", "{40C26713-CDA1-40CD-8F5D-AD83806D5603}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "log4net", "log4net\log4net.csproj", "{C49A7BBB-E80E-40D2-99D2-DD8550466F1F}"
 EndProject
@@ -22,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{40C26713-CDA1-40CD-8F5D-AD83806D5603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40C26713-CDA1-40CD-8F5D-AD83806D5603}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40C26713-CDA1-40CD-8F5D-AD83806D5603}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40C26713-CDA1-40CD-8F5D-AD83806D5603}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C49A7BBB-E80E-40D2-99D2-DD8550466F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C49A7BBB-E80E-40D2-99D2-DD8550466F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C49A7BBB-E80E-40D2-99D2-DD8550466F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +30,5 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{40C26713-CDA1-40CD-8F5D-AD83806D5603} = {3E8F1857-9AE1-4F0F-B1CE-026696F9C20A}
 	EndGlobalSection
 EndGlobal
